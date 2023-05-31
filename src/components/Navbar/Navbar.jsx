@@ -6,7 +6,7 @@ import styles from "./Navbar.module.css";
 function Navbar() {
   return (
     <div className={styles.container}>
-      <Link to="/" className={styles.logo}>ShowMoviez</Link>
+      <Link to="/movies-app" className={styles.logo}>ShowMoviez</Link>
 
       <div className={styles.right}>
         {/* <div className={styles.search}>
@@ -14,7 +14,7 @@ function Navbar() {
           <FiSearch />
         </div> */}
         <p className={styles.link}>
-          <Link to="/explore">Explore</Link>
+          <Link to="/movies-app/explore">Explore</Link>
         </p>
       </div>
     </div>

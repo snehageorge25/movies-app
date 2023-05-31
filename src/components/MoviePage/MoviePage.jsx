@@ -29,6 +29,7 @@ function MoviePage() {
   };
 
   const fetchSimilarMovies = (page) => {
+
     getSimilarMovies(movieId).then((res) => {
       if (!res) return;
       setSimilarMovies(res.results);
@@ -46,7 +47,7 @@ function MoviePage() {
           <div className={styles.desc}>{movie?.overview}</div>
           <label>Genre</label>
           <div className={styles.desc}>
-            {movie.genres.map((genre) => genre.name).join(", ")}{" "}
+            {movie?.genres?.map((genre) => genre.name).join(", ")}{" "}
           </div>
           <label>Runtime</label>
           <div className={styles.desc}>{movie?.runtime} mins</div>
