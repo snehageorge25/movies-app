@@ -14,10 +14,14 @@ function Home() {
   const [isMoreMoviesLoading, setIsMoreMoviesLoading] = useState(false);
   const [isNearEnd, setIsNearEnd] = useState(false);
 
+  useEffect(() => {
+    fetchPopularMovies(1);
+  }, []);
+
   const fetchPopularMovies = (page) => {
-    setIsMoreMoviesLoading(true)
+    setIsMoreMoviesLoading(true);
     getPopularMovies(page).then((res) => {
-        setIsMoreMoviesLoading(false)
+      setIsMoreMoviesLoading(false);
       setIsDataLoaded(true);
       if (!res) return;
       if (page === 1) {
@@ -32,16 +36,12 @@ function Home() {
 
   const handlePaginate = () => {
     if (isMoreMoviesLoading || currentPage >= totalPages) return;
-    fetchPopularMovies(currentPage+1);
+    fetchPopularMovies(currentPage + 1);
   };
 
   useEffect(() => {
     if (isNearEnd) handlePaginate();
   }, [isNearEnd]);
-
-  useEffect(() => {
-    fetchPopularMovies(1);
-  }, []);
 
   return (
     <div className={styles.container}>

@@ -1,4 +1,4 @@
-import { FiSearch } from "react-icons/fi";
+// import { FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
@@ -6,7 +6,7 @@ import styles from "./Navbar.module.css";
 function Navbar() {
   return (
     <div className={styles.container}>
-      <Link to="/" className={styles.logo}>Movies App</Link>
+      <Link to="/" className={styles.logo}>ShowMoviez</Link>
 
       <div className={styles.right}>
         {/* <div className={styles.search}>
